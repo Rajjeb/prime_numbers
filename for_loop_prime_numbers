@@ -1,0 +1,24 @@
+# 15/ 08 / 2016
+##Programa que determina los primeros mil numeros primos
+
+limite_min = 0 # El intervalo minimo
+limite_max = 100 # intervalo maximo
+iteraciones = 0 #numero de repeticiones
+# contador = 0
+
+for numero in range(limite_min,limite_max + 1):
+    creo_que_es_primo =  True # Define que si el condicionante es verdadero
+    raiz_int =int(numero ** (1/2))# el numero es primo
+    for divisor in range(2, raiz_int + 1):
+        #calcula los numeros entre los cuales se va a dividir el primer loop
+        if numero % divisor == 0: # Si se rompe el condicionante entonces el numero
+                                    # no es primo
+            creo_que_es_primo = False
+            break # se rompe el ciclo y continua con el siguiente numero
+        
+    if creo_que_es_primo: #Imprime los numeros que concuerdan con la condicion
+        iteraciones += 1
+        print(numero)
+
+print('iteraciones', iteraciones)
+print('esta hecho')
