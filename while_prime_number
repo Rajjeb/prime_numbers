@@ -1,0 +1,22 @@
+limite_max = 100 # Limite maximo
+limite_min = 1 # El inicio del contador
+contador = limite_min
+iteraciones = 1
+
+while contador < limite_max:
+    contador += 1 # el contador siga el loop
+    creo_que_es_primo = True # El operador que establece que todos lo numeros
+                                # son primos de inicio
+    raiz_int = int(contador ** (1/2)) # Calcula la raiz cuadrada de los numeros
+
+    if contador % 2 != 0: # Que los numeros sean impares
+        for numero in range(2, raiz_int + 1): # Divide el numero entre los numeros
+            if contador % numero == 0:      # entre los menores a su raiz cuadrada
+                creo_que_es_primo = False #Si no se comple  la condicion, el numero no es primo
+                break
+        if creo_que_es_primo:
+            iteraciones += 1
+            print(contador)
+            
+print('iteraciones',iteraciones)    
+print('esta hecho')    
